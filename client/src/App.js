@@ -1,14 +1,14 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
+import './App.css'
 import Home from './Pages/home';
 import About from './Pages/about';
 import Contact from './Pages/contact';
 import SForm from './Components/studentForm';
 import TForm from './Components/teacherForm';
 import Login from './Components/loginForm';
-import StudentDashboard from './Pages/studentDashboard';
-import TeacherDashboard from './Pages/teacherDashboard';
+import Dashboard from './Pages/dashboard';
+import Videocall from './Pages/videocall';
 
 function App() {
   return (
@@ -20,8 +20,8 @@ function App() {
     <Route path="/sform" element={<SForm />} />
     <Route path="/tform" element={<TForm />} />
     <Route path="/login" element={<Login />} />
-    <Route path="/sboard" element={<StudentDashboard />} />
-    <Route path="/tboard" element={<TeacherDashboard />} />
+    <Route path="/dashboard" element={<Dashboard />} />
+    <Route path="/caller" element={<Videocall/>} />
     </Routes>
     
   );

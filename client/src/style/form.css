@@ -3,10 +3,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgba(230, 230, 230, 0.5);
+    background-color: #ffffff;
     background-image:
-        radial-gradient(at 37% 23%, hsla(353, 95%, 56%, 0.641) 0, transparent 35%),
-        radial-gradient(at 55% 75%, hsla(212, 94%, 51%, 0.937) 0, transparent 40%);
+        radial-gradient(at 37% 23%, hsl(352.87, 77%, 40%) 0, transparent 59%),
+        radial-gradient(at 78% 68%, hsl(196.98, 94%, 51%) 0, transparent 55%);
 }
 
 .form-container {
@@ -67,11 +67,9 @@
     padding: 0.6rem;
 }
 
-.form-input:focus {
-    outline: none;
-    border: 1px solid #00b15e;
+.option {
+    color: #000000;
 }
-
 
 .form-button {
     display: flex;

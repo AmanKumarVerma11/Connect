@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
-import '../styles/form.css';
+import "../style/form.css"
 import Header from './header';
 import Footer from './footer';
-
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 const SForm = () => {
-    const [name, setName] = useState('');
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [branch, setBranch] = useState('Select Branch');
-
-    const handleNameChange = (e) => {
-        setName(e.target.value);
-    };
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -33,29 +30,33 @@ const SForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission logic here
-
         if( password !== confirmPassword) {
             alert('Passwords do not match');
             return;
         }
+        else{
 
-        console.log('Form submitted:', { name, email, password, branch });
+            const data = {
+                email,password,password,branch
+            }
+            axios.defaults.withCredentials = true;
+            axios.post('http://localhost:5000/registerStudent',data).then((res)=>{
+                console.log('request sent successfully')
+                console.log(res)
+                console.log('Form submitted:', { email, password, branch });
+                navigate('/Login');
+            }).catch((err)=>console.log(err))
+        }
+
+
     };
 
     return (
         <div>
         <Header/>
         <div className='card'>
-            <div className='img'> 
-                <img src='https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png' alt='profile' />
-            </div>
             <form className='form-container' onSubmit={handleSubmit}>
                 <h1 className='form-title'>Student Registration</h1>
-                <label className='form-input-label'>
-                    Name:
-                    <input className='form-input' type="text" value={name} onChange={handleNameChange} />
-                </label>
-                <br />
                 <label className='form-input-label' >
                     Email:
                     <input className='form-input' type="email" value={email} onChange={handleEmailChange} />
@@ -84,7 +85,7 @@ const SForm = () => {
                     </select>
                 </label>
                 <br />
-                <button className='form-button' type="submit">Sign Up</button>
+                <button className='form-button' type="submit" onClick={handleSubmit}>Sign Up</button>
             </form>
             <div className='img'>
             </div>

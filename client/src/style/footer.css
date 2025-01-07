@@ -45,7 +45,6 @@
     flex-direction: column;
     width:80%;
     margin: auto;
-    margin-bottom: 20px;
     padding: 10px;
     margin-right: 20px;
     display: flex;
@@ -130,7 +129,7 @@ h4 {
     margin: 1px;
     padding: 5px;
     color: gray;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 /* Media queries for responsiveness */
@@ -143,15 +142,12 @@ h4 {
     .row {
         width: 100%;
         margin-right: 0;
-        margin-bottom: 5px;
     }
 
     .row-links {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
     }
 
     .row-links li {
@@ -168,10 +164,6 @@ h4 {
         width: 100%;
         text-align: center;
     }
-
-    .logo {
-        padding-bottom: 0;
-    }
 }
 
 @media (max-width: 480px) {
@@ -183,9 +175,5 @@ h4 {
 
     .row-title {
         font-size: 1rem;
-    }
-
-    .desc {
-        font-size: 0.8rem;
     }
 }

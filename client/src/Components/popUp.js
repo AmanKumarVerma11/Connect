@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/popUp.css';
+import "../style/popUp.css"
 import { Link } from 'react-router-dom';
 
 const Modal = ({ isOpen, onClose, onTeacherClick, onStudentClick }) => {
